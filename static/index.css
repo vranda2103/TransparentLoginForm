@@ -10,7 +10,7 @@ body{
 .container
 {
     color: white;
-    position: absolute; /*parent ki position k relative*/ /*box inline ho jaega rather than block*/
+    position: absolute;
     top: 25%;
     left: 40%;
 }
@@ -18,7 +18,7 @@ body{
     font-family: 'Heebo', sans-serif;
     font-size: 40px;
     border-bottom: 5px solid purple;
-    display: inline-block; /*isse border bottom ka size chota ho gya vrna vo pure container ki length ka tha*/
+    display: inline-block; 
     margin-bottom: 15px;
     padding: 13px 0;
 }
