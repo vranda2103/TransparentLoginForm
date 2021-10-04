@@ -1,7 +1,7 @@
 const express=require("express");
 const path=require("path");
 const app=express();
-const port = process.env.PORT || 80;  //heroku's own port coz it didn't consider other ports. It set a port by its own
+const port = process.env.PORT || 80;  
 const mongoose = require('mongoose');
 const bodyparser=require("body-parser")
 mongoose.connect('mongodb://localhost/transparentForm', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/transparentForm', {useNewUrlParser: true, 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-  // we're connected!
+  
   console.log("Connected")
 });
 
@@ -20,10 +20,10 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact',contactSchema);
 
-app.use('/static',express.static('static')); //for serving static files
+app.use('/static',express.static('static')); 
 app.use(express.urlencoded());
 
-app.set('view engine','pug');//set the template engine as pug
+app.set('view engine','pug');
 app.set('views',path.join(__dirname,'views'));
 
 app.get('/',(req,res)=>{
