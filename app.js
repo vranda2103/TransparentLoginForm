@@ -1,7 +1,7 @@
 const express=require("express");
 const path=require("path");
 const app=express();
-const port = 80;
+const port = process.env.PORT || 80;  //heroku's own port coz it didn't consider other ports. It set a port by its own
 const mongoose = require('mongoose');
 const bodyparser=require("body-parser")
 mongoose.connect('mongodb://localhost/transparentForm', {useNewUrlParser: true, useUnifiedTopology: true});
